@@ -1,5 +1,6 @@
 # @expo/results
-![Tests](https://github.com/expo/results/workflows/Tests/badge.svg)
+[![Tests](https://github.com/expo/results/workflows/Tests/badge.svg)](https://github.com/expo/results/actions?query=branch%3Amaster)
+[![codecov](https://codecov.io/gh/expo/results/branch/master/graph/badge.svg)](https://codecov.io/gh/expo/results)
 
 An efficient, standards-compliant library for representing results of successful or failed operations. A result object represents the result of an operation that can either return a value successfully or fail. Typically we'd simply either return a value or throw an error, but sometimes we perform multiple operations as a batch, some of which may succeed and others fail. Since we can't simultaneously return values and throw errors, we instead return collections of result objects. This allows a batch operation to return values for successful operations and errors for failed ones without loss of information, namely the errors. (In contrast, sometimes it is appropriate for a batch operation to return just successful values and omit values for failed operations.)
 
