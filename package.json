@@ -1,0 +1,42 @@
+{
+  "name": "@expo/results",
+  "version": "0.3.0",
+  "description": "An efficient, standards-compliant library for representing results of successful or failed operations",
+  "main": "build/results.js",
+  "types": "build/results.d.ts",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "clean": "rm -rf build coverage",
+    "test": "jest",
+    "prepublish": "rm -rf build coverage",
+    "prepare": "tsc"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "coverageDirectory": "<rootDir>/coverage",
+    "coverageProvider": "babel",
+    "roots": [
+      "<rootDir>/src/"
+    ],
+    "testEnvironment": "node"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "keywords": [
+    "result",
+    "fulfilled",
+    "rejected",
+    "allsettled"
+  ],
+  "author": "Expo",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "jest": "^25.5.1",
+    "ts-jest": "~25.4.0",
+    "typescript": "^3.8.3"
+  }
+}
