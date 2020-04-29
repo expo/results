@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.0
+- Remove official Node 8.x compatibility (support 10.x and up). The package still will run on Node 8 LTS (with async functions), though.
+
 ## 0.3.0
 
 ### Additions
