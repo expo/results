@@ -9,9 +9,11 @@
   ],
   "scripts": {
     "clean": "rm -rf build coverage",
-    "test": "jest",
+    "lint": "eslint --ext '.ts' src",
     "prepublish": "rm -rf build coverage",
-    "prepare": "tsc"
+    "prepare": "tsc",
+    "prettier": "prettier --write 'src/**/*.ts'",
+    "test": "jest"
   },
   "jest": {
     "preset": "ts-jest",
@@ -22,8 +24,20 @@
     ],
     "testEnvironment": "node"
   },
+  "eslintConfig": {
+    "extends": "universe/node",
+    "settings": {
+      "react": {
+        "version": "999.999.999"
+      }
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true
+  },
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "keywords": [
     "result",
@@ -43,7 +57,10 @@
   "homepage": "https://github.com/expo/results#readme",
   "devDependencies": {
     "@types/jest": "^25.2.1",
+    "eslint": "^6.8.0",
+    "eslint-config-universe": "^3.0.0",
     "jest": "^25.5.1",
+    "prettier": "^2.0.5",
     "ts-jest": "~25.4.0",
     "typescript": "^3.8.3"
   }

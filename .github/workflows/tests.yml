@@ -1,0 +1,23 @@
+name: Tests
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x, 14.x]
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Cache Node.js modules
+      uses: actions/cache@v1
+      with:
+        path: ${{ github.workspace }}/node_modules
+        key: ${{ runner.OS }}-node_modules-${{ hashFiles('yarn.lock') }}
+    - run: yarn --frozen-lockfile
+    - run: yarn tsc
+    - run: yarn lint --max-warnings=0
+    - run: yarn test --coverage
+
