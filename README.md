@@ -49,7 +49,7 @@ function fetchWebPages(urls: string[]): Promise<Result<string>[]> {
   return Promise.all(urls.map(fetchWebPage));
 }
 
-function fetchWebPage(url: string): Promise<Result<string>> {
+async function fetchWebPage(url: string): Promise<Result<string>> {
   try {
     const response = await fetch(url);
     const text = await response.text();
