@@ -59,7 +59,7 @@ async function fetchWebPage(url: string): Promise<Result<string>> {
   }
 }
 
-// Or more idomatically:
+// Or more idiomatically:
 
 function fetchWebPage(url: string): Promise<Result<string>> {
   return asyncResult(fetch(url).then(response => response.text()));
