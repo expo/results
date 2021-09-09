@@ -55,7 +55,7 @@ export async function asyncResult<T>(promise: Promise<T>): Promise<Result<T>> {
     const value = await promise;
     return new Success(value);
   } catch (error) {
-    return error instanceof Error ? new Failure(error) : new Failure(new Error(error));
+    return error instanceof Error ? new Failure(error) : new Failure(new Error(String(error)));
   }
 }
 
